@@ -1,0 +1,73 @@
+    public void insertPayInfo(Pay pay){
+        getSqlMapClientTemplate().insert("Contract.insertPayInfo", pay);
+        
+    }
+
+    /**
+     * 수수료결제 이미 했는지 여부 체크
+     */
+    public int isExistPayInfo(Pay pay) {
+        // TODO Auto-generated method stub
+        return (Integer)getSqlMapClientTemplate().queryForObject("Contract.isExistPayInfo", pay);
+    }
+
+    /**
+     * 당해년도 계약건수. 수수료 산정위해
+     */
+    public int getContractPayCount(Pay pay) {
+        // TODO Auto-generated method stub
+        return (Integer)getSqlMapClientTemplate().queryForObject("Contract.getContractPayCount", pay);
+    }
+    public int getContractCreationPayCount(Pay pay){
+        // TODO Auto-generated method stub
+        return (Integer)getSqlMapClientTemplate().queryForObject("Contract.getContractCreationPayCount", pay);
+    }
+    public int getContractRenewPayCount(Pay pay){
+        // TODO Auto-generated method stub
+        return (Integer)getSqlMapClientTemplate().queryForObject("Contract.getContractRenewPayCount", pay);
+    }
+    public int getContractNewestPayCount(Pay pay){
+        // TODO Auto-generated method stub
+        return (Integer)getSqlMapClientTemplate().queryForObject("Contract.getContractNewestPayCount", pay);
+    }
+    public int getContractConsumerPayCount(Pay pay){
+        // TODO Auto-generated method stub
+        return (Integer)getSqlMapClientTemplate().queryForObject("Contract.getContractConsumerPayCount", pay);
+    }
+    public int getContractCreationTempPayCount(Pay pay){
+        // TODO Auto-generated method stub
+        return (Integer)getSqlMapClientTemplate().queryForObject("Contract.getContractCreationTempPayCount", pay);
+    }
+    public int getContractRenewTempPayCount(Pay pay){
+        // TODO Auto-generated method stub
+        return (Integer)getSqlMapClientTemplate().queryForObject("Contract.getContractRenewTempPayCount", pay);
+    }
+    public int getContractNewestTempPayCount(Pay pay){
+        // TODO Auto-generated method stub
+        return (Integer)getSqlMapClientTemplate().queryForObject("Contract.getContractNewestTempPayCount", pay);
+    }
+    public int getContractConsumerTempPayCount(Pay pay){
+        // TODO Auto-generated method stub
+        return (Integer)getSqlMapClientTemplate().queryForObject("Contract.getContractConsumerTempPayCount", pay);
+    }
+
+    /**
+     * 당해년도 계약건수. 수수료 산정위해 (등록번호 20% 할인)
+     */
+    public String getContractPayNumbe(Pay pay) {
+        // TODO Auto-generated method stub
+        return (String)getSqlMapClientTemplate().queryForObject("Contract.getContractPayNumbe", pay);
+    }
+    
+    /**
+     * 당해년도 계약 목록
+     */
+    public List getContractPayList(Pay pay) {
+        // TODO Auto-generated method stub
+        return getSqlMapClientTemplate().queryForList("Contract.getContractPayList", pay);
+    }
+    public List getContractTempPayList(Pay pay) {
+        // TODO Auto-generated method stub
+        return getSqlMapClientTemplate().queryForList("Contract.getContractTempPayList", pay);
+    }
+}
